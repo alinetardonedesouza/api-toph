@@ -1,0 +1,61 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Toph",
+        "description": "API desenvolvida para a manipulação de dados do teclado Toph",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "API de teste"
+        }
+    ],
+    "paths": {
+        "/dados": {
+            "post": {
+                "summary": "Cadastro de dados",
+                "description": "Rota responsável por salvar os dados enviados do teclado.",
+                "tags": [
+                    "Dados"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Dados"
+                            },
+                            "examples": {
+                                "Dados": {
+                                    "value": {
+                                        "id": 1,
+                                        "userId": 1,
+                                        "words": "ola bem vindo ao teclado em braile toph"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Dados": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "userId": {
+                        "type": "number"
+                    },
+                    "words": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
