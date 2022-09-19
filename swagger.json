@@ -28,7 +28,6 @@
                             "examples": {
                                 "Dados": {
                                     "value": {
-                                        "id": 1,
                                         "userId": 1,
                                         "words": "ola bem vindo ao teclado em braile toph"
                                     }
