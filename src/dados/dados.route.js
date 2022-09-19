@@ -8,5 +8,7 @@ const dadosController = require('./dados.controller')
 
 router.post('/dados', dadosController.criaDados)
 router.get('/dados', dadosController.pegaDados)
+router.get('/dados/:id', dadosController.pegaDadosPorId)
+router.get('/dados/:userId', dadosController.pegaDadosPorUsuarioId)
 
 module.exports = router

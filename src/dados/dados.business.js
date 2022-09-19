@@ -1,5 +1,5 @@
 const repositories = require('./dados.repository')
-const error = require('../services/error')
+const { errors } = require('../services/error')
 
 //Business: Camada de negócios -> faz as validações e chama o banco de dados (repository)
 exports.criaDados = async (dados) => {
@@ -10,7 +10,7 @@ exports.criaDados = async (dados) => {
 
         if (!dadosCriados) {
 
-            throw error.notFound()
+            throw errors.notFound()
         }
 
         return dadosCriados
@@ -21,15 +21,53 @@ exports.criaDados = async (dados) => {
     }
 }
 
-exports.pegaDados = async (queries) => {
+exports.pegaDados = async () => {
 
     try {
 
-        const dadosEncontrados = await repositories.find(queries)
+        const dadosEncontrados = await repositories.find()
 
         if (!dadosEncontrados) {
 
-            throw error.notFound()
+            throw errors.notFound()
+        }
+
+        return dadosEncontrados
+
+    } catch (error) {
+
+        throw error
+    }
+}
+
+exports.pegaDadosPorId = async (id) => {
+
+    try {
+
+        const dadosEncontrados = await repositories.find(id)
+
+        if (!dadosEncontrados) {
+
+            throw errors.notFound()
+        }
+
+        return dadosEncontrados
+
+    } catch (error) {
+
+        throw error
+    }
+}
+
+exports.pegaDadosPorUsuarioId = async (userId) => {
+
+    try {
+
+        const dadosEncontrados = await repositories.find(userId)
+
+        if (!dadosEncontrados) {
+
+            throw errors.notFound()
         }
 
         return dadosEncontrados

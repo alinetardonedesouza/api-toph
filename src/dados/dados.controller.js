@@ -25,11 +25,43 @@ class clsDados {
 
         try {
 
-            const queries = req.query
+            let dadosEncontrados = await business.pegaDados()
 
-           if(!queries) return res.status(400).send("Parâmetros não enviados.")
+            return res.status(201).json(dadosEncontrados)
 
-            let dadosEncontrados = await business.pegaDados(queries)
+        } catch (error) {
+
+            return res.status(error.code ?? 500).send(error.message)
+        }
+    }
+
+    static async pegaDadosPorId(req, res) {
+
+        try {
+
+            const { id } = req.params
+
+            if (!id) return res.status(400).send("Parâmetros não enviados.")
+
+            let dadosEncontrados = await business.pegaDadosPorId(id)
+
+            return res.status(201).json(dadosEncontrados)
+
+        } catch (error) {
+
+            return res.status(error.code ?? 500).send(error.message)
+        }
+    }
+
+    static async pegaDadosPorUsuarioId(req, res) {
+
+        try {
+
+            const { userId } = req.params
+
+            if (!userId) return res.status(400).send("Parâmetros não enviados.")
+
+            let dadosEncontrados = await business.pegaDadosPorUsuarioId(userId)
 
             return res.status(201).json(dadosEncontrados)
 

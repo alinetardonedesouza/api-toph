@@ -26,8 +26,4 @@ function internalServerError(message = `Houve um erro ao realizar a requisição
     return { code: 500, message }
 }
 
-exports.customError = customError
-exports.notFound = notFound
-exports.badRequest = badRequest
-exports.conflict = conflict
-exports.internalServerError = internalServerError
+exports.errors = { customError, notFound, badRequest, conflict, internalServerError }
