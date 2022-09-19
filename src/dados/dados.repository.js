@@ -2,14 +2,14 @@
 
 exports.create = async (dados) => {
 
-    return dados
+    return `${dados} - Criado com sucesso!`
     
     // return await Dados.create(dados, { transaction })
 }
 
 exports.find = async (dados) => {
     
-    return dados
+    return `Retornando com sucesso!`
 
     // return await Dados.find(dados, { transaction })
 }

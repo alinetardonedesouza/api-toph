@@ -7,7 +7,7 @@ class clsDados {
 
         try {
 
-           const { dados } = req.body
+           const dados = req.body
 
            if(!dados) return res.status(400).send("Parâmetros não enviados.")
 
@@ -27,7 +27,7 @@ class clsDados {
 
             let dadosEncontrados = await business.pegaDados()
 
-            return res.status(201).json(dadosEncontrados)
+            return res.status(200).json(dadosEncontrados)
 
         } catch (error) {
 
@@ -45,7 +45,7 @@ class clsDados {
 
             let dadosEncontrados = await business.pegaDadosPorId(id)
 
-            return res.status(201).json(dadosEncontrados)
+            return res.status(200).json(dadosEncontrados)
 
         } catch (error) {
 
@@ -63,7 +63,7 @@ class clsDados {
 
             let dadosEncontrados = await business.pegaDadosPorUsuarioId(userId)
 
-            return res.status(201).json(dadosEncontrados)
+            return res.status(200).json(dadosEncontrados)
 
         } catch (error) {
 

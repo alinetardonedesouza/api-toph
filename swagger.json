@@ -12,7 +12,7 @@
         }
     ],
     "paths": {
-        "/dados": {
+        "/v1/dados": {
             "post": {
                 "summary": "Cadastro de dados",
                 "description": "Rota responsável por salvar os dados enviados do teclado.",
@@ -35,6 +35,91 @@
                                 }
                             }
                         }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Parâmetros não enviados."
+                    },
+                    "500": {
+                        "description": "Um erro ocorreu"
+                    },
+                    "201": {
+                        "description": "Criado"
+                    }
+                }
+            },
+            "get": {
+                "summary": "Busca de dados",
+                "description": "Rota responsável por listar todos os dados do sistema.",
+                "tags": [
+                    "Dados"
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Dados não encontrados."
+                    },
+                    "500": {
+                        "description": "Um erro ocorreu"
+                    },
+                    "200": {
+                        "description": "Ok"
+                    }
+                }
+            }
+        },
+        "/v1/dados/{id}": {
+            "get": {
+                "summary": "Busca de dados por ID",
+                "description": "Rota responsável por listar os dados requisitados de acordo com o Id passado na requisição.",
+                "tags": [
+                    "Dados"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id da palavra",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Dados não encontrados."
+                    },
+                    "500": {
+                        "description": "Um erro ocorreu"
+                    },
+                    "200": {
+                        "description": "Ok"
+                    }
+                }
+            }
+        },
+        "/v1/dados/{userId}": {
+            "get": {
+                "summary": "Busca de dados por ID do usuário",
+                "description": "Rota responsável por listar os dados requisitados de acordo com o Id do usuário.",
+                "tags": [
+                    "Dados"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "Id do usuário",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Dados não encontrados."
+                    },
+                    "500": {
+                        "description": "Um erro ocorreu"
+                    },
+                    "200": {
+                        "description": "Ok"
                     }
                 }
             }
