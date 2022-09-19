@@ -2,7 +2,7 @@
 
 exports.create = async (dados) => {
 
-    return `${dados} - Criado com sucesso!`
+    return `Id: ${dados.id} - Criado com sucesso!`
     
     // return await Dados.create(dados, { transaction })
 }

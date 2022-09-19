@@ -1,4 +1,4 @@
-const dadosRoute = require('../dados/dados.route')
+const dadosRoute = require('../modules/dados/dados.route')
 
 //Index das rotas: aqui é onde o localhost vai bater
 //Para acessar qualquer uma das outras rotas, é necessário colocar
