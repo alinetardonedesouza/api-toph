@@ -1,5 +1,5 @@
-const repositories = require('./usuarios.repositories')
-const { errors } = require('../../services/error.service.js')
+const repositories = require('./usuarios.repository')
+const { errors } = require('../../services/error')
 const config = require('../../../../config/environment.config')
 
 
