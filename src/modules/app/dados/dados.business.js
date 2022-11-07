@@ -1,5 +1,5 @@
 const repositories = require('./dados.repository')
-const { errors } = require('../../services/error')
+const { errors } = require('../../../services/error')
 
 //Business: Camada de negócios -> faz as validações e chama o banco de dados (repository)
 exports.criaDados = async (dados) => {
