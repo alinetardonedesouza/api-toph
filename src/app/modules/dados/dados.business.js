@@ -59,11 +59,11 @@ exports.pegaDadosPorId = async (id) => {
     }
 }
 
-exports.pegaDadosPorUsuarioId = async (userId) => {
+exports.pegaDadosPorUsuarioId = async (usuarioId) => {
 
     try {
 
-        const dadosEncontrados = await repositories.find(userId)
+        const dadosEncontrados = await repositories.find(usuarioId)
 
         if (!dadosEncontrados) {
 

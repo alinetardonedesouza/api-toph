@@ -57,11 +57,11 @@ class clsDados {
 
         try {
 
-            const { userId } = req.params
+            const { usuarioId } = req.params
 
-            if (!userId) return res.status(400).send("Parâmetros não enviados.")
+            if (!usuarioId) return res.status(400).send("Parâmetros não enviados.")
 
-            let dadosEncontrados = await business.pegaDadosPorUsuarioId(userId)
+            let dadosEncontrados = await business.pegaDadosPorUsuarioId(usuarioId)
 
             return res.status(200).json(dadosEncontrados)
 

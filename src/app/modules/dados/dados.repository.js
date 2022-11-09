@@ -1,15 +1,26 @@
-//Camada do banco de dados: aqui a magia acontece (as lágrimas tbm)
+const { Dados } = require('../../../../models/index')
 
 exports.create = async (dados) => {
 
-    return `Id: n - Criado com sucesso!`
-    
-    // return await Dados.create(dados, { transaction })
+    return await Dados.create(dados)
 }
 
-exports.find = async (dados) => {
-    
-    return `Retornando com sucesso!`
+exports.update = async (dadosId, dados) => {
 
-    // return await Dados.find(dados, { transaction })
+    return await Dados.update(dados, { where: { id: dadosId } })
+}
+
+exports.delete = async (dadosId) => {
+
+    return await Dados.destroy({ where: { id: dadosId } })
+}
+
+exports.find = async (filter) => {
+
+    return await Dados.findAll(filter)
+}
+
+exports.findOne = async (dadosId) => {
+
+    return await Dados.findOne({ where: { id: dadosId } })
 }

@@ -1,31 +1,31 @@
-// const { Usuarios } = require('../../../../models/index')
+const { Usuarios } = require('../../../../models/index')
 
-// exports.create = async (usuario) => {
+exports.create = async (usuario) => {
 
-//     return await Usuarios.create(usuario)
-// }
+    return await Usuarios.create(usuario)
+}
 
-// exports.update = async (usuarioId, usuario) => {
+exports.update = async (usuarioId, usuario) => {
 
-//     return await Usuarios.update(usuario, { where: { id: usuarioId } })
-// }
+    return await Usuarios.update(usuario, { where: { id: usuarioId } })
+}
 
-// exports.delete = async (usuarioId) => {
+exports.delete = async (usuarioId) => {
 
-//     return await Usuarios.destroy({ where: { id: usuarioId } })
-// }
+    return await Usuarios.destroy({ where: { id: usuarioId } })
+}
 
-// exports.find = async (filter) => {
+exports.find = async (filter) => {
 
-//     return await Usuarios.findAll(filter)
-// }
+    return await Usuarios.findAll(filter)
+}
 
-// exports.findOne = async (usuarioId) => {
+exports.findOne = async (usuarioId) => {
 
-//     return await Usuarios.findOne({ where: { id: usuarioId } })
-// }
+    return await Usuarios.findOne({ where: { id: usuarioId } })
+}
 
-// exports.findByEmail = async (email) => {
+exports.findByEmail = async (email) => {
 
-//     return await Usuarios.findOne({ where: { email } })
-// }
+    return await Usuarios.findOne({ where: { email } })
+}
