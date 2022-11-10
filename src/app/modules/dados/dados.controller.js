@@ -7,8 +7,8 @@ class clsDados {
 
         try {
 
-           const dados = req.body
-
+           const {dados} = req.body
+           
            if(!dados) return res.status(400).send("Parâmetros não enviados.")
 
             let dadosCriados = await business.criaDados(dados)

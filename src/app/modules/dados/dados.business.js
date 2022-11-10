@@ -6,6 +6,7 @@ exports.criaDados = async (dados) => {
 
     try {
 
+        console.log(dados)
         const dadosCriados = await repositories.create(dados)
 
         if (!dadosCriados) {
