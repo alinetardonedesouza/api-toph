@@ -9,6 +9,6 @@ const dadosController = require('./dados.controller')
 router.post('/', dadosController.criaDados)
 router.get('/', dadosController.pegaDados)
 router.get('/:id', dadosController.pegaDadosPorId)
-router.get('/:usuarioId', dadosController.pegaDadosPorUsuarioId)
+router.get('/usuario/:usuarioId', dadosController.pegaDadosPorUsuarioId)
 
 module.exports = router

@@ -45,7 +45,7 @@ exports.pegaDadosPorId = async (id) => {
 
     try {
 
-        const dadosEncontrados = await repositories.find(id)
+        const dadosEncontrados = await repositories.findByPK(id)
 
         if (!dadosEncontrados) {
 
@@ -64,7 +64,7 @@ exports.pegaDadosPorUsuarioId = async (usuarioId) => {
 
     try {
 
-        const dadosEncontrados = await repositories.find(usuarioId)
+        const dadosEncontrados = await repositories.find({usuarioId})
 
         if (!dadosEncontrados) {
 

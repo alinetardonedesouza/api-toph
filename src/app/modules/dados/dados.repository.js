@@ -20,7 +20,12 @@ exports.find = async (filter) => {
     return await Dados.findAll(filter)
 }
 
-exports.findOne = async (dadosId) => {
+exports.findByPK = async (id) => {
 
-    return await Dados.findOne({ where: { id: dadosId } })
+    return await Dados.findByPk(id)
+}
+
+exports.findOne = async (filter) => {
+
+    return await Dados.findOne({ where: { filter } })
 }
