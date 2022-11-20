@@ -7,6 +7,7 @@ const dadosController = require('./dados.controller')
 //Para acesso: http://localhost:3000/v1/dados
 
 router.post('/', dadosController.criaDados)
+router.put('/:dadoId', dadosController.editaDados)
 router.get('/', dadosController.pegaDados)
 router.get('/:id', dadosController.pegaDadosPorId)
 router.get('/usuario/:usuarioId', dadosController.pegaDadosPorUsuarioId)

@@ -22,6 +22,25 @@ exports.criaDados = async (dados) => {
     }
 }
 
+exports.editaDados = async (dadoId, dados) => {
+
+    try {
+
+        const dadoEditado = await repositories.update(dadoId, dados)
+
+        if (!dadoEditado) {
+
+            throw errors.internalServerError(`Houve um erro ao editar os dados`)
+        }
+
+        return dadoEditado
+
+    } catch (error) {
+
+        throw error
+    }
+}
+
 exports.pegaDados = async () => {
 
     try {

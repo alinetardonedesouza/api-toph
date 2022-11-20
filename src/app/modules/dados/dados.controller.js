@@ -22,6 +22,25 @@ class clsDados {
         }
     }
 
+    static async editaDados(req, res) {
+
+        try {
+
+            const { dados } = req.body
+            const { dadoId } = req.params
+
+            if (!dados || !dadoId) return res.status(400).send("Parâmetros não enviados.")
+
+            let dadoEditado = await business.editaDados(dadoId, dados)
+
+            return res.status(200).json(dadoEditado)
+
+        } catch (error) {
+
+            return res.status(error.code ?? 500).send(error.message)
+        }
+    }
+
     static async pegaDados(req, res) {
 
         try {

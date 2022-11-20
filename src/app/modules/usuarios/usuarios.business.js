@@ -59,8 +59,7 @@ exports.login = async (usuario) => {
             )
 
             user.token = token
-
-            return user
+            return user.id
         }
 
         throw errors.Unauthorized(`Credenciais inválidas.`)
